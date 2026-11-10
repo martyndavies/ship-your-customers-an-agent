@@ -59,7 +59,6 @@ Everything else exists to make the demo work:
 - Acme's webhook receiver
 - Hookline's tools for sending signed webhooks and rotating the signing secret
 - Fly.io deployment files
-- Reset scripts
 
 If you want to run it anyway, [SETUP.md](SETUP.md) has the steps.
 

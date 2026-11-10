@@ -29,11 +29,17 @@ cd ../..
 
 ### 3. Acme: deploy to Fly
 
+Create the Fly app named in `acme/fly.toml`, set Acme's Blocks key and a webhook signing secret, then deploy:
+
 ```bash
-./scripts/deploy-acme.sh
+cd acme
+fly apps create acme-infra-demo
+fly secrets set BLOCKS_API_KEY=<acme-key> WEBHOOK_SECRET=<signing-secret> --stage
+fly deploy
+cd ..
 ```
 
-It reads the app name from `acme/fly.toml` and Acme's key from `acme/acme_diagnostics/.env`, then creates the app, sets the secrets, deploys, and points Hookline at the new URL. When it's done, check Acme's logs:
+Put the same signing secret in `hookline/data/secrets.json` as `{"active": "<signing-secret>", "previous": null, "rotated_at": null}`, and set `ACME_WEBHOOK_URL=https://acme-infra-demo.fly.dev/webhooks/hookline` in `hookline/hookline_support/.env`. Then check Acme's logs:
 
 ```bash
 fly logs -a acme-infra-demo
@@ -95,8 +101,9 @@ With no failures yet, you should get an answer saying nothing matched. That mean
 
 ### Break the integration
 
+Start with the same signing secret on both sides (step 3), then:
+
 ```bash
-ACME_FLY_APP=acme-infra-demo ./scripts/reset-demo.sh    # wait about 20 seconds for Fly to restart
 cd hookline/hookline_support
 npm run send 3     # 200s: working
 npm run rotate     # Hookline rotates the signing secret
