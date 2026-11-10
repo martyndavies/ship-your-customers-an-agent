@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "@blocks-network/sdk": "^1.0.26",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "tsx": "^4.19.0",
+    "@types/node": "^24.0.0"
+  },
+  "name": "hookline_support",
+  "private": true,
+  "scripts": {
+    "check": "blocks check",
+    "start": "blocks run",
+    "typecheck": "tsc --noEmit",
+    "send": "tsx ../tools/send-webhooks.mts",
+    "rotate": "tsx ../tools/rotate-secret.mts"
+  },
+  "type": "module",
+  "version": "1.0.0"
+}

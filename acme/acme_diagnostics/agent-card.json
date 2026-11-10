@@ -1,0 +1,63 @@
+{
+  "identity": {
+    "agentName": "acme_diagnostics",
+    "displayName": "Acme Webhook Diagnostics",
+    "description": "Returns a policy-filtered summary of failing webhook deliveries from Acme's handler logs. Never releases payloads, headers, or secrets.",
+    "version": "1.0.0",
+    "provider": {
+      "organization": "Acme"
+    }
+  },
+  "capabilities": {
+    "taskKinds": [
+      "request"
+    ]
+  },
+  "io": {
+    "inputs": [
+      {
+        "id": "request",
+        "description": "JSON with the webhook endpoint path and an optional ISO 8601 'since' timestamp (max 24h back).",
+        "contentType": "application/json",
+        "required": true,
+        "example": {
+          "text": "{\"endpoint\": \"/webhooks/hookline\", \"since\": \"2026-11-10T09:00:00+00:00\"}"
+        },
+        "schema": {
+          "type": "object",
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "title": "Request",
+              "default": "{\"endpoint\": \"/webhooks/hookline\", \"since\": \"2026-11-10T09:00:00+00:00\"}"
+            }
+          }
+        }
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "description": "Failing deliveries reduced to an allowlist of fields",
+        "contentType": "application/json",
+        "guaranteed": true
+      }
+    ]
+  },
+  "tags": [
+    {
+      "id": "webhook-diagnostics",
+      "name": "Webhook diagnostics",
+      "description": "Explains why webhook deliveries are failing on Acme's side"
+    }
+  ],
+  "runtime": {
+    "handler": "./handler.py",
+    "handlerExport": "handler",
+    "concurrency": 1,
+    "expectedInstances": 1
+  }
+}

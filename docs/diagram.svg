@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ah-dark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f2433"/>
+    </marker>
+    <marker id="ah-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6a3fd0"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="675" fill="#ffffff"/>
+
+  <!-- Developer asking -->
+  <rect x="455" y="28" width="290" height="52" rx="26" fill="#ffffff" stroke="#2e9d62" stroke-width="2"/>
+  <text x="600" y="50" text-anchor="middle" font-size="14" font-weight="600" fill="#1f2433">Acme developer asks</text>
+  <text x="600" y="69" text-anchor="middle" font-size="14" fill="#3d4459">“Why are my webhooks failing?”</text>
+  <text x="318" y="80" text-anchor="end" font-size="13" font-weight="600" fill="#1f2433">① question</text>
+  <text x="318" y="98" text-anchor="end" font-size="13" font-weight="600" fill="#1f2433">④ diagnosis</text>
+
+  <!-- Hookline -->
+  <rect x="40" y="110" width="360" height="440" rx="18" fill="#eef4ff" stroke="#3b6fd8" stroke-width="2"/>
+  <text x="70" y="146" font-size="15" font-weight="700" letter-spacing="1.5" fill="#2a56b3">HOOKLINE</text>
+  <text x="70" y="166" font-size="13" fill="#3d4459">Vendor · runs on a laptop</text>
+
+  <rect x="70" y="188" width="300" height="92" rx="12" fill="#ffffff" stroke="#3b6fd8" stroke-width="2"/>
+  <text x="90" y="224" font-size="19" font-weight="700" fill="#1f2433">hookline_support</text>
+  <text x="90" y="250" font-size="14" fill="#3d4459">TypeScript agent</text>
+  <text x="70" y="304" font-size="12.5" fill="#5a6175">connects outbound only</text>
+
+  <rect x="70" y="330" width="300" height="76" rx="10" fill="#ffffff" stroke="#b9c9ee" stroke-width="1.5"/>
+  <text x="90" y="362" font-size="15" font-weight="600" fill="#1f2433">Delivery logs</text>
+  <text x="90" y="386" font-size="13.5" fill="#3d4459">Sees <tspan font-weight="700">that</tspan> it’s failing: 401s</text>
+
+  <rect x="70" y="426" width="300" height="76" rx="10" fill="#ffffff" stroke="#b9c9ee" stroke-width="1.5"/>
+  <text x="90" y="458" font-size="15" font-weight="600" fill="#1f2433">Private runbook</text>
+  <text x="90" y="482" font-size="13.5" fill="#3d4459">Known issues and their fixes</text>
+
+  <!-- Blocks Network -->
+  <rect x="470" y="110" width="260" height="440" rx="18" fill="#f4efff" stroke="#7c4ddb" stroke-width="2"/>
+  <text x="600" y="146" text-anchor="middle" font-size="15" font-weight="700" letter-spacing="1.5" fill="#5b33b8">BLOCKS NETWORK</text>
+
+  <text x="600" y="210" text-anchor="middle" font-size="14" font-weight="600" fill="#1f2433">② request evidence</text>
+
+  <text x="600" y="282" text-anchor="middle" font-size="14" font-weight="600" fill="#1f2433">③ allowlisted summary</text>
+  <text x="600" y="302" text-anchor="middle" font-size="12.5" fill="#3d4459">event IDs · error classes</text>
+  <text x="600" y="320" text-anchor="middle" font-size="12.5" fill="#3d4459">secret fingerprint</text>
+
+  <text x="600" y="452" text-anchor="middle" font-size="13.5" fill="#3d4459">Identity checked on every call</text>
+  <text x="600" y="478" text-anchor="middle" font-size="13.5" fill="#3d4459">Access granted by Acme</text>
+  <text x="600" y="504" text-anchor="middle" font-size="13.5" fill="#3d4459">Revocable at any time</text>
+
+  <!-- Acme -->
+  <rect x="800" y="110" width="360" height="440" rx="18" fill="#ecf8f1" stroke="#2e9d62" stroke-width="2"/>
+  <text x="830" y="146" font-size="15" font-weight="700" letter-spacing="1.5" fill="#227a4b">ACME</text>
+  <text x="830" y="166" font-size="13" fill="#3d4459">Customer · runs on Fly.io</text>
+
+  <rect x="830" y="188" width="300" height="92" rx="12" fill="#ffffff" stroke="#2e9d62" stroke-width="2"/>
+  <text x="850" y="224" font-size="19" font-weight="700" fill="#1f2433">acme_diagnostics</text>
+  <text x="850" y="250" font-size="14" fill="#3d4459">Python agent · release policy in code</text>
+  <text x="830" y="304" font-size="12.5" fill="#5a6175">connects outbound only</text>
+
+  <rect x="830" y="330" width="300" height="76" rx="10" fill="#ffffff" stroke="#b5ddc6" stroke-width="1.5"/>
+  <text x="850" y="362" font-size="15" font-weight="600" fill="#1f2433">Webhook handler log</text>
+  <text x="850" y="386" font-size="13.5" fill="#3d4459">Sees <tspan font-weight="700">why</tspan>: signature errors</text>
+
+  <rect x="830" y="426" width="300" height="76" rx="10" fill="#fff6f4" stroke="#d9826c" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="850" y="458" font-size="15" font-weight="600" fill="#1f2433">Never leaves Acme</text>
+  <text x="850" y="482" font-size="13.5" fill="#3d4459">Payloads · headers · secrets</text>
+
+  <!-- Footer -->
+  <text x="600" y="610" text-anchor="middle" font-size="18" fill="#1f2433">Only the question and an allowlisted summary cross the network.</text>
+  <text x="600" y="638" text-anchor="middle" font-size="18" fill="#1f2433">No inbound ports. No shared credentials.</text>
+
+  <!-- Arrows (drawn last so nothing covers them) -->
+  <path d="M455,54 L330,54 L330,186" fill="none" stroke="#1f2433" stroke-width="2" marker-start="url(#ah-dark)" marker-end="url(#ah-dark)"/>
+  <line x1="372" y1="222" x2="826" y2="222" stroke="#6a3fd0" stroke-width="2.5" marker-end="url(#ah-purple)"/>
+  <line x1="828" y1="258" x2="374" y2="258" stroke="#6a3fd0" stroke-width="2.5" marker-end="url(#ah-purple)"/>
+</svg>

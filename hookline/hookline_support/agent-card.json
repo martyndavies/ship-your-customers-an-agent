@@ -1,0 +1,64 @@
+{
+  "identity": {
+    "agentName": "hookline_support",
+    "displayName": "Hookline Support",
+    "description": "Diagnoses webhook delivery problems by combining Hookline's delivery logs with the customer's own diagnostics agent and Hookline's internal runbook.",
+    "version": "1.0.0",
+    "provider": {
+      "organization": "Hookline"
+    }
+  },
+  "capabilities": {
+    "taskKinds": [
+      "request"
+    ]
+  },
+  "io": {
+    "inputs": [
+      {
+        "id": "request",
+        "description": "A plain-language support question from a Hookline customer.",
+        "contentType": "application/json",
+        "required": true,
+        "example": {
+          "text": "Why are my Hookline webhooks failing?"
+        },
+        "schema": {
+          "type": "object",
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "title": "Request",
+              "default": "Why are my Hookline webhooks failing?"
+            }
+          }
+        }
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "description": "Diagnosis in Markdown: cause, fix, and the evidence used",
+        "contentType": "text/markdown",
+        "guaranteed": true
+      }
+    ]
+  },
+  "tags": [
+    {
+      "id": "webhook-support",
+      "name": "Webhook support",
+      "description": "Diagnoses failing Hookline webhook integrations"
+    }
+  ],
+  "runtime": {
+    "handler": "./handler.ts",
+    "handlerExport": "default",
+    "concurrency": 1,
+    "expectedInstances": 1,
+    "maxRunningTimeSec": 120
+  }
+}
